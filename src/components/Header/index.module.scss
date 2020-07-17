@@ -1,8 +1,13 @@
 .header {
   display: flex;
-  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
   background-color: var(--main-grey);
   .logo {
     width: 30px;
+  }
+  a {
+    color: white;
   }
 }
