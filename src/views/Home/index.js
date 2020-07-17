@@ -35,7 +35,10 @@ const Home = () => {
       return;
     }
 
-    const [prefix = null, value = null] = searchInput.split(":");
+    let [prefix = null, value = null] = searchInput.split(":");
+
+    prefix = prefix.trim();
+    value = value.trim();
 
     const usedPrefix = ["username", "fullname"].includes(prefix);
 

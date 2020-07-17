@@ -134,7 +134,7 @@ const UserSearchResults = ({ location: { search } }) => {
               ))} */}
               <PaginationButtons
                 totalPages={Math.ceil(totalResults / RESULTS_PER_PAGE)}
-                link="&page="
+                linkPrefix="&page="
                 active={page}
               />
             </main>

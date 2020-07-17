@@ -14,17 +14,22 @@ const UserBlock = ({ url, avatar, username, fullname, followers, bio }) => (
         <strong className={styles["user-details-username"]}>username:</strong>{" "}
         {username}
       </span>
-      <span>
-        <strong className={styles["user-details-username"]}>fullname:</strong>{" "}
-        {fullname}
-      </span>
+      {fullname !== null && (
+        <span>
+          <strong className={styles["user-details-username"]}>fullname:</strong>{" "}
+          {fullname}
+        </span>
+      )}
       <span>
         <strong className={styles["user-details-username"]}>followers:</strong>{" "}
         {followers}
       </span>
-      <span>
-        <strong className={styles["user-details-username"]}>bio:</strong> {bio}
-      </span>
+      {bio !== null && (
+        <span>
+          <strong className={styles["user-details-username"]}>bio:</strong>{" "}
+          {bio}
+        </span>
+      )}
     </div>
   </a>
 );
