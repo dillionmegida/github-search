@@ -6,7 +6,7 @@ import { useState } from "react";
 import styles from "./index.module.scss";
 
 import Layout from "../../components/Layout";
-import Notification from "../../components/notification";
+import Notification from "../../components/Notification";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");

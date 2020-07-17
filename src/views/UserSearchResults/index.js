@@ -10,7 +10,7 @@ import {
   searchDetailsForAllUsers,
 } from "../../apis/githubUsers";
 import Loading from "../../components/Loading";
-import Notification from "../../components/notification";
+import Notification from "../../components/Notification";
 import { genRandomNumber } from "../../utils/numbers";
 import PaginationButtons from "../../components/PaginationButtons";
 import { RESULTS_PER_PAGE } from "../../utils/constants";

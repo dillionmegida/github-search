@@ -21,7 +21,7 @@ const PaginationButtons = ({ totalPages, active = 1, link }) => {
               parseInt(active, 10) === value ? styles["active-page"] : ""
             }
             key={genRandomNumber()}
-            // append the previous url to this new search
+            // append this new search to the current URL
             href={`${window.location.href.replace(
               regexToTestSearchPattern,
               ""
