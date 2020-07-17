@@ -43,6 +43,7 @@ const Home = () => {
     // check if a prefix was used or just a value
     const usedPrefix = value !== null;
 
+    setSearchInput("");
     if (usedPrefix) {
       window.location.href = `/search?prefix=${prefix}&value=${value}`;
     } else {

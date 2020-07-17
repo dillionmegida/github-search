@@ -89,7 +89,7 @@ const UserSearchResults = ({ location: { search } }) => {
         resultsForCurrentPage: allUserDetails,
       });
     })();
-  }, [page, prefix, testIfSearchInPattern, value]);
+  }, []);
 
   return (
     <Layout>
@@ -107,12 +107,12 @@ const UserSearchResults = ({ location: { search } }) => {
             <main className={styles.main}>
               <div className={styles["top-main"]}>
                 <h1>
-                  Users with the{" "}
+                  Users that match the pattern{" "}
                   <strong>
-                    {prefix}: &quot;{value}&quot;
+                    &quot;{prefix}: {value}&quot;
                   </strong>
                 </h1>
-                <p>{totalResults} results</p>
+                <p>{totalResults} result(s)</p>
               </div>
               <div className={styles.users}>
                 {resultsForCurrentPage.map(

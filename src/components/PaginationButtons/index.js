@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
@@ -10,40 +11,41 @@ const PaginationButtons = ({ totalPages, active = 1, linkPrefix }) => {
 
   return (
     <div className={styles.buttons}>
-      {Array.from(Array(totalPages), (_, index) => index + 1).map((value) => {
-        const searchPattern = linkPrefix + value;
+      {totalPages > 1 &&
+        Array.from(Array(totalPages), (_, index) => index + 1).map((value) => {
+          const searchPattern = linkPrefix + value;
 
-        // regex is important to replace the pattern if it exists in the URL already
-        const regexToTestSearchPattern = new RegExp(`${linkPrefix}\\d{1,}`);
+          // regex is important to replace the pattern if it exists in the URL already
+          const regexToTestSearchPattern = new RegExp(`${linkPrefix}\\d{1,}`);
 
-        const isActivePage = parseInt(active, 10) === value;
+          const isActivePage = parseInt(active, 10) === value;
 
-        // append this new search to the current URL
-        const link = `${window.location.href.replace(
-          regexToTestSearchPattern,
-          ""
-        )}${searchPattern}`;
+          // append this new search to the current URL
+          const link = `${window.location.href.replace(
+            regexToTestSearchPattern,
+            ""
+          )}${searchPattern}`;
 
-        const label = count + value;
+          const label = count + value;
 
-        return (
-          <>
-            {isActivePage ? (
-              // to avoid reload when current page button is pressed
-              <NavLink
-                to={link.replace(window.location.origin, "")}
-                className={styles["active-page"]}
-              >
-                {label}
-              </NavLink>
-            ) : (
-              <a key={genRandomNumber()} href={link}>
-                {label}
-              </a>
-            )}
-          </>
-        );
-      })}
+          return (
+            <>
+              {isActivePage ? (
+                // to avoid reload when current page button is pressed
+                <NavLink
+                  to={link.replace(window.location.origin, "")}
+                  className={styles["active-page"]}
+                >
+                  {label}
+                </NavLink>
+              ) : (
+                <a key={genRandomNumber()} href={link}>
+                  {label}
+                </a>
+              )}
+            </>
+          );
+        })}
     </div>
   );
 };

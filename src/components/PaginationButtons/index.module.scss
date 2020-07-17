@@ -1,7 +1,9 @@
 .buttons {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
   width: max-content;
+  max-width: 600px;
   a {
     padding: 7px 12px;
     background-color: var(--very-light-grey);
