@@ -16,6 +16,7 @@ import { genRandomNumber, addCommaToNumber } from "../../utils/numbers";
 import PaginationButtons from "../../components/PaginationButtons";
 import { RESULTS_PER_PAGE } from "../../utils/constants";
 import UserBlock from "../../components/UserBlock";
+import Helmet from "../../components/Helmet";
 
 // eslint-disable-next-line react/prop-types
 const UserSearchResults = ({ location: { search } }) => {
@@ -58,6 +59,12 @@ const UserSearchResults = ({ location: { search } }) => {
       }
 
       if (result.error) {
+        let errorMsg;
+
+        if (result.error.response) {
+          // then an error response was gotten from the endpoint
+          errorMsg = result.error.response.data.message;
+        } else errorMsg = result.message;
         setResults({
           totalResults: null,
           resultsForCurrentPage: "error",
@@ -65,7 +72,7 @@ const UserSearchResults = ({ location: { search } }) => {
         setNotification({
           show: true,
           type: "error",
-          msg: result.error.response.data.message,
+          msg: errorMsg,
         });
         return;
       }
@@ -98,6 +105,9 @@ const UserSearchResults = ({ location: { search } }) => {
 
   return (
     <Layout>
+      <Helmet
+        pageTitle={`Users that match the pattern '${prefix}:${value}'`}
+      />
       <Notification
         type={type}
         msg={msg}

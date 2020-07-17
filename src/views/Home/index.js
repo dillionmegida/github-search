@@ -7,6 +7,7 @@ import styles from "./index.module.scss";
 
 import Layout from "../../components/Layout";
 import Notification from "../../components/Notification";
+import Helmet from "../../components/Helmet";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -54,6 +55,7 @@ const Home = () => {
 
   return (
     <Layout>
+      <Helmet pageTitle="Search users on GitHub" />
       <Notification
         type={type}
         show={show}
