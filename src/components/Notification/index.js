@@ -40,11 +40,16 @@ const Notification = ({
   );
 };
 
+Notification.defaultProps = {
+  type: "error",
+  msg: "",
+};
+
 Notification.propTypes = {
   show: PropTypes.bool.isRequired,
-  type: PropTypes.string.isRequired,
-  msg: PropTypes.string.isRequired,
-  onClickCloseBtn: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  msg: PropTypes.string,
+  onClickCloseBtn: PropTypes.func.isRequired,
 };
 
 export default Notification;

@@ -35,6 +35,10 @@
   border-radius: var(--main-border-radius);
   &.notification-success {
   }
+  .notification-msg {
+    width: 80%;
+    margin: 0 auto;
+  }
   .notification-close-btn {
     background-color: white;
     width: 40px;
