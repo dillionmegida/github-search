@@ -6,7 +6,7 @@ import styles from "./index.module.scss";
 const Notification = ({
   show = false,
   type = "error",
-  msg = "hello excuse me",
+  msg,
   onClickCloseBtn,
 }) => {
   const nStyles = {

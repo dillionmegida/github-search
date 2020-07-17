@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   visibility: hidden;
+  padding: 0 20px;
   &.notification-show {
     animation: showNotification 400ms forwards;
     @keyframes showNotification {
