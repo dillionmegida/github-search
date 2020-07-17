@@ -37,13 +37,14 @@ const Home = () => {
 
     let [prefix = null, value = null] = searchInput.split(":");
 
+    setSearchInput("");
+
     prefix = prefix.trim().replace(" ", "+");
     if (value !== null) value = value.trim();
 
     // check if a prefix was used or just a value
     const usedPrefix = value !== null;
 
-    setSearchInput("");
     if (usedPrefix) {
       window.location.href = `/search?prefix=${prefix}&value=${value}`;
     } else {
@@ -74,6 +75,9 @@ const Home = () => {
                   onChange={updateSearchInputState}
                   placeholder="Search users on GitHub"
                 />
+                <span className={styles["input-group-message"]}>
+                  Only one prefix can be used
+                </span>
               </div>
               <div className={styles["submit-btn"]}>
                 <input type="submit" value="Search" />
@@ -84,7 +88,7 @@ const Home = () => {
             <h2>Search Tips</h2>
             <ul>
               <li>
-                <strong>username:[username]</strong>: to search user by username
+                <strong>user:[username]</strong>: to search user by username
               </li>
               <li>
                 <strong>fullname:[fullname]</strong>: to search user by fullname

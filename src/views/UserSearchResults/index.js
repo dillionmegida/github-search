@@ -12,7 +12,7 @@ import {
 } from "../../apis/githubUsers";
 import Loading from "../../components/Loading";
 import Notification from "../../components/Notification";
-import { genRandomNumber } from "../../utils/numbers";
+import { genRandomNumber, addCommaToNumber } from "../../utils/numbers";
 import PaginationButtons from "../../components/PaginationButtons";
 import { RESULTS_PER_PAGE } from "../../utils/constants";
 import UserBlock from "../../components/UserBlock";
@@ -60,9 +60,13 @@ const UserSearchResults = ({ location: { search } }) => {
       if (result.error) {
         setResults({
           totalResults: null,
-          allUserDetails: "error",
+          resultsForCurrentPage: "error",
         });
-        setNotification({ show: true, type: "error", msg: result.message });
+        setNotification({
+          show: true,
+          type: "error",
+          msg: result.error.response.data.message,
+        });
         return;
       }
 
@@ -99,6 +103,15 @@ const UserSearchResults = ({ location: { search } }) => {
         show={show}
         onClickCloseBtn={hideNotification}
       />
+      {resultsForCurrentPage === "error" && (
+        <button
+          className={styles["go-back-btn"]}
+          type="button"
+          onClick={() => window.history.back()}
+        >
+          Go back
+        </button>
+      )}
       {resultsForCurrentPage === null ? (
         <Loading />
       ) : (
@@ -112,7 +125,7 @@ const UserSearchResults = ({ location: { search } }) => {
                     &quot;{prefix}: {value}&quot;
                   </strong>
                 </h1>
-                <p>{totalResults} result(s)</p>
+                <p>{addCommaToNumber(totalResults)} result(s)</p>
               </div>
               <div className={styles.users}>
                 {resultsForCurrentPage.map(

@@ -43,6 +43,13 @@
       input {
         background-color: white;
       }
+
+      .input-group-message {
+        display: block;
+        margin: 5px;
+        color: var(--mid-grey);
+        font-size: 0.8rem;
+      }
     }
 
     .submit-btn {

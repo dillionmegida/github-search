@@ -1,2 +1,6 @@
-// eslint-disable-next-line import/prefer-default-export
 export const genRandomNumber = () => Math.random();
+
+export const addCommaToNumber = (number) => {
+  const nf = new Intl.NumberFormat();
+  return nf.format(number);
+};

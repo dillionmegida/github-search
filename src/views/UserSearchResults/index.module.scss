@@ -3,10 +3,21 @@
   margin: 30px auto;
 }
 
+.go-back-btn {
+  background: none;
+  display: block;
+  border: none;
+  background-color: var(--mid-grey);
+  padding: 15px;
+  color: white;
+  border-radius: var(--main-border-radius);
+  margin: 100px auto;
+}
+
 .main {
   .top-main {
     h1 {
-      font-size:1.3rem;
+      font-size: 1.3rem;
       margin: 10px;
       color: var(--main-grey);
       font-weight: normal;
