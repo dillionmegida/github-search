@@ -62,7 +62,3 @@ export const searchUsersByFindIn = async (field, value, page) => {
     };
   }
 };
-
-// export const searchUsersByFindInEmail = (email) => {};
-
-// export const searchUsersByFindInUsername = (username) => {};

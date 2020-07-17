@@ -8,7 +8,9 @@ const Header = () => (
     <div className={styles.logo}>
       <img src="/icons/github-logo.svg" alt="GitHub logo" />
     </div>
-    <NavLink to="/">Homepage</NavLink>
+    <nav>
+      <NavLink to="/">Homepage</NavLink>
+    </nav>
   </header>
 );
 
