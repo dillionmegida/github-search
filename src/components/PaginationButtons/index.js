@@ -60,7 +60,9 @@ const PaginationButtons = ({
                 <a key={genRandomNumber()} href={link}>
                   {label}
                 </a>
-                {halfButtonsToView < activePage && <span>...</span>}
+                {halfButtonsToView < activePage && (
+                  <span className={styles["buttons-dots"]}>...</span>
+                )}
               </>
             );
           }
@@ -75,7 +77,7 @@ const PaginationButtons = ({
             return (
               <>
                 {totalPages - activePage > halfButtonsToView && (
-                  <span>...</span>
+                  <span className={styles["buttons-dots"]}>...</span>
                 )}
                 <a href={link}>{label}</a>
               </>

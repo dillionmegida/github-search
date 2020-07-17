@@ -1,12 +1,24 @@
 .container {
   max-width: 600px;
   margin: 30px auto;
+  padding: 10px;
+}
+
+.go-back-btn {
+  background: none;
+  display: block;
+  border: none;
+  background-color: var(--mid-grey);
+  padding: 15px;
+  color: white;
+  border-radius: var(--main-border-radius);
+  margin: 100px auto;
 }
 
 .main {
   .top-main {
     h1 {
-      font-size:1.3rem;
+      font-size: 1.3rem;
       margin: 10px;
       color: var(--main-grey);
       font-weight: normal;
@@ -15,11 +27,21 @@
       margin: 10px;
       color: var(--mid-grey);
     }
+    @media (max-width: 700px) {
+      text-align: center;
+      h1 {
+        font-size: 1rem;
+      }
+    }
   }
 }
 
 .users {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  .users-user {
+    width: 45%;
+    min-width: 250px;
+  }
 }

@@ -1,6 +1,7 @@
 .container {
   max-width: 600px;
   margin: auto;
+  padding: 10px;
 }
 
 .main {
@@ -18,12 +19,26 @@
       color: var(--main-grey);
       font-weight: normal;
     }
+    @media (max-width: 800px) {
+      img {
+        width: 20px;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1rem;
+      }
+    }
   }
 }
 
 .search-form {
   form {
     display: flex;
+    flex-wrap: wrap;
 
     input {
       width: 100%;
@@ -39,9 +54,17 @@
     .input-group {
       flex: 1;
       margin-right: 30px;
+      min-width: 200px;
 
       input {
         background-color: white;
+      }
+
+      .input-group-message {
+        display: block;
+        margin: 5px 0 15px;
+        color: var(--mid-grey);
+        font-size: 0.8rem;
       }
     }
 
@@ -62,6 +85,7 @@
   }
   ul {
     font-size: 0.9rem;
+    padding: 0 25px;
     li {
       margin: 10px 0;
     }

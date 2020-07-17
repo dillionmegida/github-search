@@ -27,7 +27,8 @@ const UserBlock = ({ url, avatar, username, fullname, followers, bio }) => (
       {bio !== null && (
         <span>
           <strong className={styles["user-details-username"]}>bio:</strong>{" "}
-          {bio}
+          {bio.substr(0, 50)}
+          {bio.length > 50 && "..."}
         </span>
       )}
     </div>

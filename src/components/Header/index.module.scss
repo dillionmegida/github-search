@@ -4,6 +4,9 @@
   align-items: center;
   padding: 15px 60px;
   background-color: var(--main-grey);
+  @media (max-width: 600px) {
+    padding: 15px;
+  }
   .logo {
     width: 30px;
   }
