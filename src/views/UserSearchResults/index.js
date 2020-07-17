@@ -6,8 +6,9 @@ import styles from "./index.module.scss";
 import Layout from "../../components/Layout";
 
 import {
-  searchUsersByUsername,
+  searchUsersBy,
   searchDetailsForAllUsers,
+  searchUsersByFindIn,
 } from "../../apis/githubUsers";
 import Loading from "../../components/Loading";
 import Notification from "../../components/Notification";
@@ -37,16 +38,24 @@ const UserSearchResults = ({ location: { search } }) => {
 
   const hideNotification = () => setNotification(false);
 
+  const testIfSearchInPattern = /(in)$/;
+
   useEffect(() => {
     (async () => {
-      let searchFuncToUse;
+      let result;
 
-      switch (prefix) {
-        default:
-          searchFuncToUse = searchUsersByUsername;
+      if (testIfSearchInPattern.test(prefix)) {
+        const [phrase] = prefix.split(" ");
+        if (value === "fullname") {
+          result = await searchUsersByFindIn("fullname", phrase, page);
+        } else if (value === "email") {
+          result = await searchUsersByFindIn("email", phrase, page);
+        } else {
+          result = await searchUsersByFindIn("result", phrase, page);
+        }
+      } else {
+        result = await searchUsersBy(prefix, value, page);
       }
-
-      const result = await searchFuncToUse(value, page);
 
       if (result.error) {
         setResults({

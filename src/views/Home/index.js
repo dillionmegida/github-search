@@ -37,10 +37,10 @@ const Home = () => {
 
     let [prefix = null, value = null] = searchInput.split(":");
 
-    prefix = prefix.trim();
+    prefix = prefix.trim().replace(" ", "+");
     value = value.trim();
 
-    const usedPrefix = ["username", "fullname"].includes(prefix);
+    const usedPrefix = value !== null;
 
     if (usedPrefix) {
       window.location.href = `/search?prefix=${prefix}&value=${value}`;
@@ -82,10 +82,22 @@ const Home = () => {
             <h2>Search Tips</h2>
             <ul>
               <li>
-                <strong>user:[username]</strong>: to search user by username
+                <strong>username:[username]</strong>: to search user by username
               </li>
               <li>
                 <strong>fullname:[fullname]</strong>: to search user by fullname
+              </li>
+              <li>
+                <strong>[word] in:fullname</strong>: to search users with
+                fullname that contains the word [word]
+              </li>
+              <li>
+                <strong>[word] in:username</strong>: to search users with
+                fullname that contains the word [word]
+              </li>
+              <li>
+                <strong>[word] in:email</strong>: to search users with email
+                that contains the word [word]
               </li>
             </ul>
           </section>
