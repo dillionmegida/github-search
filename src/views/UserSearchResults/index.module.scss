@@ -1,0 +1,18 @@
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.main {
+  .top-main {
+    h1 {
+      font-size:1.5rem;
+      margin: 10px;
+      color: var(--main-grey);
+      font-weight: normal;
+    }
+    p {
+      margin: 10px;
+    }
+  }
+}

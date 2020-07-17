@@ -18,13 +18,13 @@ const Home = () => {
 
   const { show, msg, type } = notification;
 
-  const onClickCloseNotificationBtn = () => setNotification(false);
+  const hideNotification = () => setNotification(false);
 
   const updateSearchInputState = ({ target: { value } }) => {
     setSearchInput(value);
   };
 
-  const onSubmitSearchForm = (e) => {
+  const onSubmitSearchForm = async (e) => {
     e.preventDefault();
 
     if (searchInput === "") {
@@ -32,6 +32,17 @@ const Home = () => {
         show: true,
         msg: "Search field should not be empty",
       });
+      return;
+    }
+
+    const [prefix = null, value = null] = searchInput.split(":");
+
+    const usedPrefix = ["username", "fullname"].includes(prefix);
+
+    if (usedPrefix) {
+      window.location.href = `/search?prefix=${prefix}&value=${value}`;
+    } else {
+      window.location.href = `/search?prefix=username&value=${searchInput}`;
     }
   };
 
@@ -41,10 +52,10 @@ const Home = () => {
         type={type}
         show={show}
         msg={msg}
-        onClickCloseBtn={onClickCloseNotificationBtn}
+        onClickCloseBtn={hideNotification}
       />
-      <main className={styles.main}>
-        <div className={styles.container}>
+      <div className={styles.container}>
+        <main className={styles.main}>
           <div className={styles["main-top"]}>
             <img src="/icons/search-icon.svg" alt="" />
             <h1>
@@ -75,8 +86,8 @@ const Home = () => {
               </li>
             </ul>
           </section>
-        </div>
-      </main>
+        </main>
+      </div>
     </Layout>
   );
 };
