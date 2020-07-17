@@ -1,13 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
+:root {
+  --main-grey: #24292e;
+  --light-grey: #e2dddd;
+  --very-light-grey: #f7f3f3;
+  --faded-blue: rgba(112, 112, 241, 0.575);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+img {
+  width: 100%;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
 }

@@ -1,0 +1,66 @@
+.main {
+  padding: 20px;
+
+  .container {
+    max-width: 600px;
+    margin: auto;
+
+    .main-top {
+      display: flex;
+
+      img {
+        width: 40px;
+        margin-right: 10px;
+      }
+
+      h1 {
+        color: var(--main-grey);
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.search-form {
+  form {
+    display: flex;
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid var(--light-grey);
+      border-radius: 5px;
+      color: var(--main-grey);
+      &:focus {
+        outline: 2px solid var(--faded-blue);
+      }
+    }
+
+    .input-group {
+      flex: 1;
+      margin-right: 30px;
+
+      input {
+        background-color: white;
+      }
+    }
+
+    .submit-btn {
+      width: 100px;
+
+      input {
+        background-color: var(--very-light-grey);
+      }
+    }
+  }
+}
+
+.search-tips-section {
+  margin: 40px 0 80px;
+  h2 {
+    font-size: 1rem;
+  }
+  ul {
+    font-size: 0.9rem;
+  }
+}
