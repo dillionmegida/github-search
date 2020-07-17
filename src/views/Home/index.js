@@ -38,8 +38,9 @@ const Home = () => {
     let [prefix = null, value = null] = searchInput.split(":");
 
     prefix = prefix.trim().replace(" ", "+");
-    value = value.trim();
+    if (value !== null) value = value.trim();
 
+    // check if a prefix was used or just a value
     const usedPrefix = value !== null;
 
     if (usedPrefix) {
