@@ -1,0 +1,20 @@
+.buttons {
+  display: flex;
+  margin: 0 auto;
+  width: max-content;
+  a {
+    padding: 7px 12px;
+    background-color: var(--very-light-grey);
+    color: var(--mid-grey);
+    font-size: 0.9rem;
+    border-radius: var(--main-border-radius);
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+    &:hover,
+    &.active-page {
+      background-color: var(--mid-grey);
+      color: white;
+    }
+  }
+}

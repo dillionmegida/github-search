@@ -1,9 +1,10 @@
 import axios from "axios";
+import { RESULTS_PER_PAGE } from "../utils/constants";
 
-const api = "https://api.github.com/search/users";
+const api = `https://api.github.com/search/users?per_page=${RESULTS_PER_PAGE}`;
 
-export const searchUsersByUsername = async (username) => {
-  const fullApi = `${api}?q=${username}`;
+export const searchUsersByUsername = async (username, page = 1) => {
+  const fullApi = `${api}&q=${username}&page=${page}`;
   try {
     const result = await axios({
       url: fullApi,
@@ -13,7 +14,7 @@ export const searchUsersByUsername = async (username) => {
   } catch (err) {
     return {
       error: err,
-      message: "Unable to make request",
+      message: "Unable to make request. Please try again",
     };
   }
 };
