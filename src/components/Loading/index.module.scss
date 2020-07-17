@@ -1,0 +1,33 @@
+.loading {
+  max-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+  div {
+    width: 20px;
+    height: 20px;
+    background-color: var(--mid-grey);
+    border-radius: 50%;
+    animation-name: fadeInFadeOut;
+    animation-duration: 900ms;
+    animation-iteration-count: infinite;
+    &:nth-child(1) {
+      animation-delay: 0;
+    }
+    &:nth-child(2) {
+      animation-delay: 600ms;
+    }
+    &:nth-child(3) {
+      animation-delay: 800ms;
+    }
+    @keyframes fadeInFadeOut {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}
