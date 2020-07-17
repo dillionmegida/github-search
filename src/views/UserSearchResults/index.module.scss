@@ -22,31 +22,4 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  .user-block {
-    width: 100%;
-    width: 47%;
-    min-width: 250px;
-    display: flex;
-    color: var(--mid-grey);
-    min-height: 100px;
-    padding: 15px;
-    border: 1px solid var(--light-grey);
-    margin: 15px 0;
-    border-radius: var(--main-border-radius);
-    .user-avatar {
-      width: 60px;
-      height: 60px;
-      margin-right: 20px;
-    }
-    .user-details {
-      flex: 1;
-      span {
-        display: block;
-        font-size: 0.8rem;
-      }
-      .user-details-username {
-        color: var(--main-grey);
-      }
-    }
-  }
 }

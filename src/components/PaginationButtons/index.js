@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import styles from "./index.module.scss";
-// import { NavLink } from "react-router-dom";
 import { genRandomNumber } from "../../utils/numbers";
 
 const PaginationButtons = ({ totalPages, active = 1, link }) => {
