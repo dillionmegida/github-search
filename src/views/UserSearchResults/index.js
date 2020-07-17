@@ -89,7 +89,7 @@ const UserSearchResults = ({ location: { search } }) => {
         resultsForCurrentPage: allUserDetails,
       });
     })();
-  }, []);
+  }, [page, prefix, testIfSearchInPattern, value]);
 
   return (
     <Layout>
