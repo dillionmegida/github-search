@@ -29,7 +29,7 @@
       width: 100%;
       padding: 8px;
       border: 1px solid var(--light-grey);
-      border-radius: 5px;
+      border-radius: var(--main-border-radius);
       color: var(--main-grey);
       &:focus {
         outline: 2px solid var(--faded-blue);

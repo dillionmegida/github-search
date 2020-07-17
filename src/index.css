@@ -5,6 +5,9 @@
   --light-grey: #e2dddd;
   --very-light-grey: #f7f3f3;
   --faded-blue: rgba(112, 112, 241, 0.575);
+  --main-red: rgb(233, 69, 69);
+
+  --main-border-radius: 5px;
 }
 
 * {
